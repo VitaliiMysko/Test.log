@@ -19,7 +19,7 @@ class Server {
 
 }
 
-const fn = new Server('test','80.82.83.102')
+const fn = new Server('test','70.82.83.102')
 
 //comment
 
