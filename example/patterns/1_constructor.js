@@ -19,7 +19,9 @@ class Server {
 
 }
 
-const fn = new Server('test','80.82.83.88')
+const fn = new Server('test','80.82.83.102')
+
+//comment
 
 console.log(fn.getUrl())
 
