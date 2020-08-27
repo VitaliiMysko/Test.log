@@ -21,9 +21,6 @@ class Server {
 
 const fn = new Server('test','100.82.83.102')
 
-//comment
-//comment 1
-//comment 2
 
 console.log(fn.getUrl())
 

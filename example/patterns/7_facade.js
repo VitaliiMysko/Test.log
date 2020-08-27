@@ -31,7 +31,7 @@ class EasterWishText extends WishTextCard{
 
 }
 
-class fixitWishTest{
+class FixitWishTest{
 
     register(castomer, type, wishText){
 
@@ -52,7 +52,7 @@ class fixitWishTest{
 
 }
 
-const greatWish = new fixitWishTest()
+const greatWish = new FixitWishTest()
 
 console.log(greatWish.register('Vitalij', 'Easter', 'Happy Easter, men'))
 console.log(greatWish.register('Pedro', 'Cristmas', 'Happy Cristmas, men'))
