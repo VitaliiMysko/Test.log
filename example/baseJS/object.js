@@ -35,3 +35,20 @@ for(let key in ob2){
     }
 
 }
+
+const anyNumber = Math.floor(Math.random() * 10)
+
+const ferstObj = {
+    name: 'Vitalii',
+    age: 31
+}
+
+const secondObj = {
+    name: 'Petro',
+    ['num' + anyNumber]: anyNumber
+}
+
+const thirthObj = Object.assign({}, ferstObj, secondObj)
+console.log(ferstObj)
+console.log(secondObj)
+console.log(thirthObj)

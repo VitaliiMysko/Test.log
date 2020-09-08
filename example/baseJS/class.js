@@ -1,51 +1,51 @@
 
-class Component{
-    constructor(selector){
-        this.$div = document.querySelector(selector)
-    }
+// class Component{
+//     constructor(selector){
+//         this.$div = document.querySelector(selector)
+//     }
 
-    show(){
-        this.$div.style.display = 'block'
-    }
+//     show(){
+//         this.$div.style.display = 'block'
+//     }
 
-    hide(){
-        this.$div.style.display = 'none'
-    }
-}
+//     hide(){
+//         this.$div.style.display = 'none'
+//     }
+// }
 
-class Box extends Component{
-    constructor(data){
-        super(data.selector)
-        this.$div.style.width = this.$div.style.height = data.size + 'px'
-        this.$div.style.background = data.color
-    }
-}
+// class Box extends Component{
+//     constructor(data){
+//         super(data.selector)
+//         this.$div.style.width = this.$div.style.height = data.size + 'px'
+//         this.$div.style.background = data.color
+//     }
+// }
 
-class Circle extends Box{
-    constructor(data){
-        super(data)
-        this.$div.style.borderRadius = '50%'
-    }  
-} 
+// class Circle extends Box{
+//     constructor(data){
+//         super(data)
+//         this.$div.style.borderRadius = '50%'
+//     }  
+// } 
 
 
-const box1 = new Box({
-    selector: '#div1',
-    size: 50,
-    color: 'blue'
-})
+// const box1 = new Box({
+//     selector: '#div1',
+//     size: 50,
+//     color: 'blue'
+// })
 
-const box2 = new Box({
-    selector: '#div2',
-    size: 50,
-    color: 'yellow'
-})
+// const box2 = new Box({
+//     selector: '#div2',
+//     size: 50,
+//     color: 'yellow'
+// })
 
-const circle = new Circle({
-    selector: '#div3',
-    size: 50,
-    color: 'green'
-})
+// const circle = new Circle({
+//     selector: '#div3',
+//     size: 50,
+//     color: 'green'
+// })
 
 // class People{
 
@@ -129,3 +129,36 @@ const circle = new Circle({
 
 // console.log(homoErectys)
 // homoErectys.currentPeriod()
+
+
+
+//================NEW 2020================
+// #privalFild
+// static #staticPrivatFild
+// fild = 'any value'
+
+class Person {
+    name = 'dafoult name'
+    static #budget = 13000
+    static stat = 'value static param'
+    static #statprivat = 'value static privat param'
+
+    constructor(){
+        //this.name = name
+        //this.cours = cours
+    }
+
+    static budgetDolars () {
+        Person.#budget = Person.#budget / 26
+        return Person.#budget
+    }
+}
+
+const pers = new Person('Volodumur')
+console.log(pers)
+//pers.#budget = 26000
+//console.log(Person.budgetDolars())
+console.log(Person.budgetDolars())
+
+
+console.log(typeof 10n)

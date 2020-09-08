@@ -119,36 +119,45 @@
 //==========Example three==========
 //optimization method "find" in array when we have many elements
 
-const idArr = []
+// const idArr = []
 
 const ourArr = [
-    {id: '11', name: 'Petro', age: 20},
-    {id: '22', name: 'Stepan', age: 30},
-    {id: '33', name: 'Vasia', age: 40},
-    {id: '44', name: 'Olexandr', age: 50},
-    {id: '55', name: 'Mukolai', age: 60}
+    {id: 11, name: 'Petro', age: 20},
+    {id: 22, name: 'Stepan', age: 30},
+    {id: 33, name: 'Vasia', age: 40},
+    {id: 44, name: 'Olexandr', age: 50},
+    {id: 55, name: 'Mukolai', age: 60}
 ]
 
-
-
 const OurArr = new Proxy(Array,{
-    construct(target,args){
+    construct(target, [args]){
         console.log('====construct====')
-        console.log(target)
-        console.log(args)
-
-        args[0].forEach(item => idArr[item.id] = item)
-        //args[0].forEach(item => console.log(item.id))
+        
+        const idObj = {}
+        args.forEach(element => (idObj[element.id] = element));
+        // console.log('idObj', idObj)
 
         return new Proxy(new target(...args),{
-            get:(target, prop) => {
+            get(target, prop) {
                 console.log('====get====')
-                console.log(prop)
-                return target[prop]
-            },
-            set:(target, prop, value) => {
-                console.log('====set====')
-                target[prop] = value
+
+                switch (prop) {
+                    case 'push':
+                        console.log('====push====')
+                        return params => {
+                            idObj[params.id] = params
+                            target[prop].call(target,params)
+                        }
+                        //break;
+                    case 'findById': 
+                        console.log('====findById====')
+                        return params => idObj[params]
+                        // break;
+                    default:
+                        console.log('====default====')
+                        return target[prop]
+                        // break;
+                }
             }
         })
     }
