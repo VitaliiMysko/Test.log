@@ -8,7 +8,6 @@ console.log('' ?? 'empty string value')         //''
 console.log(false ?? 'false value')             //false
 
 
-
 // ================================
 
 const fullObj = {
