@@ -1,3 +1,4 @@
+// ==================variant1==================
 var boom = {
     id: 'Unic id',
     power: 13,
@@ -42,4 +43,5 @@ var vegetables = {};
 vegetables['ka ram ba'] = 'ka ram ba';
 vegetables['enion'] = 'onion';
 vegetables['potato'] = 'potato';
+// vegetables['pea'] = 13
 console.log(vegetables);

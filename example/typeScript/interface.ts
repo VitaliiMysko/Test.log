@@ -7,6 +7,8 @@ interface MegaBoom {
     arr?: [boolean|number, string] 
 }
 
+// ==================variant1==================
+
 const boom: MegaBoom = {
     id: 'Unic id',
     power: 13,
@@ -18,8 +20,6 @@ const boom: MegaBoom = {
     }
 }
 
-
-// ==================variant1==================
 // // boom.id = 33
 
 // boom.arr = [false, 'Max']

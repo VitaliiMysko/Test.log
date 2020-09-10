@@ -18,4 +18,5 @@ enum similarArr {
 }
 
 console.log(similarArr.bike, similarArr.scooter)
-console.log(similarArr[2])
+console.log(similarArr[2])      //car
+console.log(similarArr['car'])  //2
